@@ -35,11 +35,13 @@ document.getElementById('daysbox').addEventListener('click',function(e)
 // when the clear-button is clicked, the "clicked" class is removed from all days, any other relevant variables are reset, and the calculated cost is set to 0.
 clearbutton.onclick = function(){cleardays();};
 function cleardays(){
-    days.forEach(removeClicked(days))
+    for (let i =0; i<days.length; i++){
+        days[i].classList.remove("clicked")
+    }
+    fullday.classList.add("clicked")
+    halfday.classList.remove("clicked")
 }
-function removeClicked(){
-    days.classList.remove("clicked")
-}
+
 
 
 
