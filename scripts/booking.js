@@ -6,10 +6,10 @@ var dayCost = 20;
 var dayCounter = 0;
 var fullday = document.getElementById("full");
 var halfday = document.getElementById("half");
-var dayLength = "full";
 var calculatedcostLabel = document.getElementById("calculated-cost");
 var clearbutton = document.getElementById("clear-button");
 const days = document.querySelectorAll(".day");
+var calculatedcost = 0;
 
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
@@ -18,17 +18,17 @@ document.getElementById('daysbox').addEventListener('click',function(e)
 {
     if (e.target.classList.contains("day")){
         if (e.target.classList.contains("clicked")){
-            e.target.classList.remove("clicked")
-            dayCounter -= 1
-            calcualte(dayCounter,dayCost)
+            e.target.classList.remove("clicked");
+            dayCounter -= 1;
+            calcualte(dayCounter,dayCost);
         }else {
-            e.target.classList.add("clicked")
-            dayCounter += 1
-            calcualte(dayCounter,dayCost)
+            e.target.classList.add("clicked");
+            dayCounter += 1;
+            calcualte(dayCounter,dayCost);
         }
     }
 }
-)
+);
 
 
 /********* clear days *********/
@@ -36,10 +36,10 @@ document.getElementById('daysbox').addEventListener('click',function(e)
 clearbutton.onclick = function(){cleardays();};
 function cleardays(){
     for (let i =0; i<days.length; i++){
-        days[i].classList.remove("clicked")
+        days[i].classList.remove("clicked");
     }
-    fullday.classList.add("clicked")
-    halfday.classList.remove("clicked")
+    fullday.classList.add("clicked");
+    halfday.classList.remove("clicked");
 }
 
 
@@ -50,8 +50,8 @@ function cleardays(){
 // when the half-day button is clicked, set the daily rate to $20, add the "clicked" class to the "half" element, remove it from the "full" element, and recalculate the total cost.
 halfday.onclick = function(){halfdayf();};
 function halfdayf(){
-    halfday.classList.add("clicked")
-    fullday.classList.remove("clicked")
+    halfday.classList.add("clicked");
+    fullday.classList.remove("clicked");
     dayCost = 20;
     calcualte(dayCounter,dayCost);
 }
@@ -62,8 +62,8 @@ function halfdayf(){
 
 fullday.onclick = function(){fulldayf();};
 function fulldayf(){
-    fullday.classList.add("clicked")
-    halfday.classList.remove("clicked")
+    fullday.classList.add("clicked");
+    halfday.classList.remove("clicked");
     dayCost = 35;
     calcualte(dayCounter,dayCost);
 }
