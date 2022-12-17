@@ -23,8 +23,9 @@ body {
 }
 
 /* TO DO: all elements with the .flex class applied are to be made into flex-box containers. */
-
-
+.flex {
+    display: flex;
+}
  
 
 /************* site-wide text styling *************/
@@ -41,11 +42,51 @@ body {
         - change the text colour to white, and 
         - change the cursor to pointer.
 */
+h1{
+    font-size: 48px;
+    text-align: center;
+    margin: auto;
+}
 
+h2{
+    font-size: 36px;
+    margin-bottom: 12px;
+}
 
+.large-text{
+    font-size: 24px;
+}
 
+.fake-button:hover{
+    text-decoration: underline;
+    background-color: #4278e5;
+    color: white;
+    cursor: pointer;
+}
+.blue-hover:hover{
+    text-decoration: underline;
+    background-color: #4278e5;
+    color: white;
+    cursor: pointer;
+}
+.fake-button{
+    background-color: #e5af42;
+    align-items: center;
+    line-height: 3;
+    border: black solid 1px;
+}
 
+a{
+    text-decoration: none;
+    color: black;
+}
 
+header  a:hover{
+    text-decoration: underline;
+}
+footer  a:hover{
+    text-decoration: underline;
+}
 
 
 
@@ -58,9 +99,25 @@ body {
     - there will be 25px of space between the header and main, and 50px of space between main and footer.
     - the footer will be 60px tall, have a font-weight of 200, and the text within will be centered vertically and horizontally.
 */
-
-
-
+header{
+    background-color: #e5af42;
+    height: 150px;
+    margin-bottom: 25px;
+}
+header img{
+    width: 100px;
+    height: 100px;
+    padding-left: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+footer{
+    height: 60px;
+    background-color: #e5af42;
+    font-weight: 200;
+    text-align: center;
+    margin-top: 50px;
+}
 
 
 
@@ -73,8 +130,22 @@ body {
     - each fake-button on this page will be 250px wide with 150px of space between them.
     - the pair of fake-buttons will be centered on the page. HINT: can calculate the required margin to make them appear to be centered.
 */
-
-
+h2{
+    line-height: 36px;
+}
+.flex > .fake-button{
+    width: 250px;
+    text-align: center;
+}
+.index > .flex{
+    justify-content: space-around;
+}
+.bulldog{
+    width: 300px;
+    padding-bottom: 50px;
+    padding-left: 25px;
+}
+.index p{padding-bottom: 12px;}
 
 
 
@@ -92,17 +163,40 @@ body {
     - all items within the page will be centered within their available space.
 
 */
+.booking-page{
+    width: 600px;
+    text-align: center;
+    font: 18px;
+    margin: auto;
+}
 
+.day-selector{
+    margin-bottom: 12px;
 
+}
+.day-selector li{
+    margin: 10px;
+    border: black 1px solid;
+    width: 60px;
+}
+.small-button{
+    border: black 1px solid;
+    margin: 5px;
+}
+.top-margin{
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
 
+#clear-button{
+    width: 200px;
+    margin: auto;
+}
+.clicked{background-color: #e5af42;}
 
-
-
-
-
-
-
-
+.day-selector{
+    justify-content: center;
+}
 
 
 /************* contact page *************/
@@ -113,7 +207,31 @@ body {
     - all form input, textarea, and and button elements will have the same font as the rest of the page, a line-height of 24px, a font-size of 16px, and the same border as other buttons on the site. There will be 24px of space below each of these elements.
     - the edges of the button will line up exactly with the text-area element. HINT: time for some math!
 */
-
-
-
-
+main{
+    height: 420px;
+    text-align: center;
+}
+#contact-page .flex{
+    justify-content: center;
+}
+label{
+    flex-basis: 150px;
+    text-align: right;
+}
+#user-name:not(label), #user-email:not(label), #user-message:not(label){
+    width: 300px;
+    margin-left: 24px;
+}
+textarea{height: 150px;}
+.booking-page textarea, .fake-button, input{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 24px;
+    font-size: 16px;
+    border: black 1px solid;
+    margin-bottom: 24px;
+}
+#submit-button{
+    width: 306px;
+    float: right;
+    margin-right: 235px;
+}
